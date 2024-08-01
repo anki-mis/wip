@@ -1,0 +1,35 @@
+<div class="grid">
+   <button class="button" (click)="shape='rectangle'">
+        Rectangle
+    </button>
+    <button class="button" (click)="shape='circle'">
+        Circle
+    </button>
+    <button class="button" (click)="shape='pentagon'">
+        Pentagon
+    </button>
+</div>
+
+<ng-container *ngIf="this.shape==='rectangle'">
+    <ng-container *ngTemplateOutlet="rectangle"></ng-container>   
+</ng-container>
+
+<ng-container *ngIf="this.shape==='circle'">
+    <ng-container *ngTemplateOutlet="circle"></ng-container>   
+</ng-container>
+
+<ng-container *ngIf="this.shape==='pentagon'">
+    <ng-container *ngTemplateOutlet="pentagon"></ng-container>   
+</ng-container>
+
+<ng-template #rectangle>
+    <app-shapes shapeType="rectangle"/>
+</ng-template>
+
+<ng-template #circle>
+    <app-shapes shapeType="circle"/>
+</ng-template>
+
+<ng-template #pentagon>
+    <app-shapes shapeType="pentagon"/>
+</ng-template>
